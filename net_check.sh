@@ -5,8 +5,8 @@ dns_check=0
 ping_ok=0
 no_ping=0
 
-server_1="eu1.stratum.slushpool.com 3333"
-server_2="goo1gle.com 443"
+server_1="eu.stratum.slushpool.com 3333"
+server_2="google.com 443"
 ping_ip="8.8.8.8"
 router_ip=$(netstat -rn | grep 'UG' | awk '{print $2}' | grep '^[0-9]\{1,3\}\.')
 
