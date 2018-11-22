@@ -12,8 +12,10 @@ dns_check=0
 ping_ok=0
 no_ping=0
 
-while ping -c1 "$router_ip"
+while true
 do
+if ping -c1 "$router_ip"
+then
   while ! nc -vzw1 $server_1  && !  nc -vzw1  $server_2
   do
     if (( ping_ok >= 10 ))
@@ -60,7 +62,9 @@ do
     sleep 30
     (( dns_check++ ))
     echo "DEBUG: DNS check #$dns_check"
-  done
+if
+sleep 30
+done
 
   echo "All good, check in 30"
   sleep 30
