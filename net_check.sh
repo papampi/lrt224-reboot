@@ -22,7 +22,7 @@ do
       echo "$(date) - [WARNING] - Name resolution problem while ping is ok, waited 5 minutes, restarting router" | tee -a $DIR/net_check.log
       sleep 5
       #reboot router
-      #bash /home/minera/lrt224-reboot/router-reboot.sh
+      bash $DIR/router-reboot.sh
       dns_check=0
       ping_ok=0
       while ! ping -c1 "$router_ip"
@@ -37,7 +37,7 @@ do
       echo "$(date) - [WARNING] - Name resolution problem and NO Ping, waited 10 minutes, restarting router" | tee -a $DIR/net_check.log
       sleep 5
       #reboot router
-      #bash /home/minera/lrt224-reboot/router-reboot.sh
+      bash $DIR/router-reboot.sh
       dns_check=0
       no_ping=0
       while ! ping -c1 "$router_ip"
