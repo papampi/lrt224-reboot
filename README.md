@@ -11,5 +11,5 @@ cp env.template env
 Trigger the reboot
 
 ```
-   ./router-reboot.sh
+./router-reboot.sh
 ```
