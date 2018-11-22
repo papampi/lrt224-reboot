@@ -58,11 +58,11 @@ do
       (( no_ping++ ))
       echo "DEBUG: No Ping #$no_ping"
     fi
-    sleep 5
+    sleep 30
     (( dns_check++ ))
     echo "DEBUG: DNS check #$dns_check"
   done
 
   echo "All good, check in 30"
-  sleep 10
+  sleep 30
 done
