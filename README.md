@@ -2,18 +2,14 @@
 Use this script to reboot a Linksys LRT224 router. Should also work on the LRT214.
 
 ## Use
-1. Copy the env.template to env
+Copy the env.template to env
 
-   ```bash
+```
 cp env.template env
 ```
-1. Update `env` with your username and password
 
-   ```bash
-vi ./env
+Trigger the reboot
+
 ```
-1. Trigger the reboot
-
-   ```bash
-./router-reboot.sh
+   ./router-reboot.sh
 ```
