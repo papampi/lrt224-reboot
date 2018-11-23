@@ -25,7 +25,7 @@ do
       then
         echo "$(date) - [WARNING] - Name resolution problem while ping is ok, waited 5 minutes, restarting router" | tee -a $DIR/net_check.log
         #reboot router
-        #bash $DIR/router-reboot.sh
+        bash $DIR/router-reboot.sh
         dns_check=0
         ping_ok=0
         router_reboot=1
@@ -37,7 +37,7 @@ do
       then
         echo "$(date) - [WARNING] - Name resolution problem and NO Ping, waited 10 minutes, restarting router" | tee -a $DIR/net_check.log
         #reboot router
-        #bash $DIR/router-reboot.sh
+        bash $DIR/router-reboot.sh
         dns_check=0
         no_ping=0
         router_reboot=1
@@ -45,7 +45,7 @@ do
         sleep 90
       fi
 
-      if (( router_reboot = 0 ))
+      if (( router_reboot == 0 ))
       then
         echo "$(date) - [WARNING] - Internet Problem, checking ..." | tee -a $DIR/net_check.log
         if ping -c1 "$ping_ip" # &> /dev/null
