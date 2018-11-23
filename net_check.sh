@@ -23,7 +23,7 @@ do
         echo "$(date) - [WARNING] - Name resolution problem while ping is ok, waited 5 minutes, restarting router" | tee -a $DIR/net_check.log
         sleep 5
         #reboot router
-        bash $DIR/router-reboot.sh
+        #bash $DIR/router-reboot.sh
         dns_check=0
         ping_ok=0
         while ! ping -c1 "$router_ip"
@@ -38,7 +38,7 @@ do
         echo "$(date) - [WARNING] - Name resolution problem and NO Ping, waited 10 minutes, restarting router" | tee -a $DIR/net_check.log
         sleep 5
         #reboot router
-        bash $DIR/router-reboot.sh
+        #bash $DIR/router-reboot.sh
         dns_check=0
         no_ping=0
         while ! ping -c1 "$router_ip"
@@ -59,14 +59,16 @@ do
         (( no_ping++ ))
         echo "DEBUG: No Ping #$no_ping"
       fi
-      sleep 30
       (( dns_check++ ))
-      echo "DEBUG: DNS check #$dns_check"
 
-    fi
-    echo "All good, check in 30"
-    sleep 30
-  done
-  echo "Router Down, check in 30"
+      echo "DEBUG: DNS check #$dns_check"
+      echo "Sleep 30"
+      sleep 30
+    done
+
+  else
+    echo "Router Down, check in 30"
+  fi
+  echo "sleep 30"
   sleep 30
 done
